@@ -43,7 +43,7 @@ export const getAuthCookie = (options : AuthCookieOptions) : [string, string, bi
     if(accessToken === undefined || accessToken === null) accessToken = ""
     if(refreshToken === undefined || refreshToken === null ) refreshToken = ""
     if(accessTokenExpiresIn === undefined || accessTokenExpiresIn === null) accessTokenExpiresIn = ""
-    return [accessToken as string, refreshToken as string, BigInt(accessTokenExpiresIn as string)]
+    return [accessToken as string, refreshToken as string, accessTokenExpiresIn as unknown as bigint]
 }
 
 export const getAuthCookieByKey = (key : string, options : AuthCookieOptions) : string | bigint => {
